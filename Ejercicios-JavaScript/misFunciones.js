@@ -56,3 +56,69 @@ function mostrar_ocultar (id_elem){
     if (id_elem=="mostrarDiv"){
         document.getElementById("unDiv").style.display= 'none';}
 }
+
+function dibujo(){
+
+    var canvas= document.getElementById("myCanvas");
+    var ctx =canvas.getContext("2d");
+
+    ctx.fillStyle = "#1854ac";
+    ctx.beginPath();
+    ctx.rect (0,0,30,40);
+    ctx.fill();
+    ctx.closePath();
+
+
+ctx.fillStyle = "#af3679"
+ctx.beginPath();
+ctx.arc(canvas.width/2, canvas.height/2,30,0,2*Math.PI);
+ctx.
+ctx.fill();
+ctx.closePath();
+}
+
+function dibujarc() {
+
+    var canvas= document.getElementById("myCanvas");
+    var ctx =canvas.getContext("2d");
+
+    ctx.clearRect(0,0,canvas.width,canvas.height)
+    ctx.fillStyle ="#000";
+    ctx.beginPath();
+
+    for (var i=10;i<canvas.width;i=i+10){
+
+    ctx.moveTo(i,0);
+    ctx.lineTo(i,canvas.height);
+    ;
+    }
+
+    for (var i=10;i<canvas.width;i=i+10){
+
+        ctx.moveTo(0,i);
+        ctx.lineTo(canvas.width,i);
+
+    }
+
+    ctx.stroke();
+    ctx.closePath()
+}
+
+function dibujarimg() {
+
+    var canvas= document.getElementById("myCanvas");
+    var ctx =canvas.getContext("2d");
+
+    var img = new Image();
+    img.src= "images/auto.png";
+
+
+    img.onload =function () {
+
+        ctx.drawImage(img, 50,50);
+    }
+
+
+
+
+}
